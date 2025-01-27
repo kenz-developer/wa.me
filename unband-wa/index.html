@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Unband Whatsapp Dalam Waktu 5-6 Jam">
+  <title>Unban WhatsApp Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Unban WhatsApp Number</h1>
+    <form id="unbanForm" action="mailto:support@support.whatsapp.com" method="post" enctype="text/plain">
+      <label for="number">Enter Your WhatsApp Number:</label>
+      <input type="text" id="number" name="number" placeholder="+628xx" required>
+
+      <textarea id="message" name="message" readonly>
+Hello to the respected WhatsApp support team, I can't use my WhatsApp number [Your Number], I have never violated WhatsApp's terms and conditions and I only chat but my WhatsApp number is suddenly deactivated, please WhatsApp support team immediately reactivate it because I need it every day, thank you.
+      </textarea>
+
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("unbanForm");
+    const numberInput = document.getElementById("number");
+    const messageField = document.getElementById("message");
+
+    form.addEventListener("submit", (e) => {
+      const number = numberInput.value.trim();
+      if (!number.startsWith("+")) {
+        alert("Please enter a valid WhatsApp number with country code.");
+        e.preventDefault();
+        return;
+      }
+
+      // Replace placeholder in the message
+      messageField.value = messageField.value.replace("[Your Number]", number);
+    });
+  </script>
+</body>
+</html>
